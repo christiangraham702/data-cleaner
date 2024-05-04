@@ -1,0 +1,6 @@
+Name,Age,Score,Category
+Alice,25.0,88.5,A
+Bob,,92.0,B
+,28.0,,A
+Charlie,35.0,85.5,
+David,,90.0,B
