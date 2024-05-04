@@ -51,5 +51,30 @@ To check the geospatial integrity of data, specify the columns containing latitu
 
 **Ensure json string is formatted correctly `'[[lat, long], ..., [lat,long]]'`**
 
+<br><br>
+
+## Example Usage with Test Data
+#### Full test: All functionalities
+This test removes duplicates, fills missing values, normalizes, and checks the integrity of the geographic data.
+`python3 main.py tests/geo_test_data.csv --remove-duplicates --fill-strategies '{"Latitude": "mean", "Longitude": "mean", "Score": "median"}' --normalize --text-norm title --scale-nums --check-geo --lat-col "Latitude" --lon-col "Longitude" --boundary '[[-180, -90], [-180, 90], [180, 90], [180, -90]]' --output cleaned_geo_data.csv`
+<br>
+### Normalize Data
+This tests normalizes some data
+`python3 main.py tests/normalization_test_data.csv --text-norm title --scale-nums --date-cols '{"Joined": "%d-%m-%Y"}' --output normalized_data.csv`
+<br>
+### Fill Missing Values
+This test fills missing values
+`python3 main.py tests/normalization_test_data.csv --text-norm title --scale-nums --date-cols '{"Joined": "%d-%m-%Y"}' --output normalized_data.csv`
+<br>
+### Remove Duplicates
+This test removes duplicates
+`python3 main.py tests/sample_data_with_duplicates.csv --remove-duplicates --output rm_dupes.csv`
+
+
+
+
+
+
+
 
 
